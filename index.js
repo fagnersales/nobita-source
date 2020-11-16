@@ -1,8 +1,10 @@
 require('dotenv').config()
 
-const { Client } = require('discord.js')
+const DiscordRobot = require('./robots/Discord')
 
-const client = new Client()
+async function start() {
+    await DiscordRobot()
+}
 
+start()
 
-client.login(process.env.TOKEN)

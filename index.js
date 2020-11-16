@@ -4,16 +4,11 @@ const DiscordRobot = require('./robots/Discord')
 const CommandRobot = require('./robots/Command')
 
 async function start() {
-    // const discordRobot = await DiscordRobot()
+    const discordRobot = await DiscordRobot()
 
-    await CommandRobot({
-        discordRobot: {},
-        blacklist: 'blacklistedCommands',
-        options: {
-            
-        }
-    })
-
+    // Inserts all the valid commands into a new Collection called 'commands'
+    CommandRobot({ discordRobot })
+    discordRobot.commands.get('hi').run()
 
 }
 

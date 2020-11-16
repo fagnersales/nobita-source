@@ -1,14 +1,14 @@
 const firebase = require('firebase')
 
-const firebaseConfig = {
-    apiKey: "AIzaSyDKu4d5mA8v7VXTBDKzSQJHf-0lHZQLk9I",
-    authDomain: "neable.firebaseapp.com",
-    databaseURL: "https://neable.firebaseio.com",
-    projectId: "neable",
-    storageBucket: "neable.appspot.com",
-    messagingSenderId: "417832853208",
-    appId: "1:417832853208:web:bf1b50d71dad2960a941ad",
-    measurementId: "G-DZZC0CPJN4"
+const initializeAppOptions = {
+    apiKey: process.env.FIREBASE_APIKEY,
+    authDomain: process.env.FIREBASE_AUTHDOMAIN,
+    databaseURL: process.env.FIREBASE_DATABASEURL,
+    projectId: process.env.FIREBASE_PROJECTID,
+    storageBucket: process.env.FIREBASE_STORAGEBUCKET,
+    messagingSenderId: process.env.FIREBASE_MESSAGINGSENDERID,
+    appId: process.env.FIREBASE_APPID,
+    measurementId: process.env.FIREBASE_MEASUREMENTID
 }
 
-firebase.initializeApp(firebaseConfig)
+firebase.initializeApp(initializeAppOptions)

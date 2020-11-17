@@ -7,7 +7,7 @@ async function start() {
     const discordRobot = await DiscordRobot()
 
     CommandRobot({ discordRobot })
-    EventRobot({ discordRobot })
+    EventRobot({ discordRobot, whenReady: ['syncedtest', 'syncedtest2'] })
 
 }
 

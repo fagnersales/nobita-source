@@ -4,7 +4,6 @@ const { readdirSync, Dirent } = require('fs')
 const { join } = require("path")
 
 /**
- * 
  * @param {Object} EventRobotStartData Data for this robot
  * @param {Client} EventRobotStartData.discordRobot Client Instance that will evoke the events
  * @param {String} [EventRobotStartData.path] Optional custom path (default: '../../events')
@@ -58,6 +57,11 @@ function start(EventRobotStartData) {
             && isExportingEverything(join(eventsPath, file.name), 'run')
     }
 
+    /**
+     * 
+     * @param {String} path 
+     * @param  {...any} props 
+     */
     function isExportingEverything(path, ...props) {
         const file = require(path)
         for (const prop of props) {
@@ -65,6 +69,11 @@ function start(EventRobotStartData) {
         }
         return true
     }
+    /** 
+     * @param {String} name
+     * @param {Object} func
+     * @param {String} syncedName
+     */
     function saveEvent(name, func, syncedName) {
         discordRobot['on'](name, (...args) => {
             if (syncedName) console.log(`> EventRobot: Calling the event ${syncedName}, synced with: ${name}`)

@@ -9,6 +9,11 @@ async function start() {
     CommandRobot({ discordRobot })
     EventRobot({ discordRobot, whenReady: ['syncedtest', 'syncedtest2'] })
 
+
+    // Test for BaseCommand
+    discordRobot.on('message', message => {
+        if (message.content.startsWith('nob.test#askoption')) discordRobot.commands.get('test#askoption').run(message, discordRobot)
+    })
 }
 
 start()

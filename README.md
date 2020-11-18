@@ -1,2 +1,1 @@
-# nobita
- Aprenda desde linguagem de programação até linguagem de comunicação comigo!
+# Working on v2.0 branch
